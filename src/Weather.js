@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css"
 import axios from "axios";
 
 export default function Weather() {
     
+    const [weatherData, setWeatherData] = useState({ ready: false });
+    function handleResponse(response) {
+        setWeatherData ({
+            ready: true,
+            temperature: response.data.temperature.current,
+            city: response.data.city,
+            wind: response.data.wind.speed,
+            description: response.data.condition.description,
+            humidity: response.data.temperature.humidity,
+            description: response.data.condition.description,
+            iconUrl: "https://ssl.gstatic.com/onebox/weather/64/rain_light.png",
+            date: response.data.time * 1000
+         });
+
+         
+        
+    }
+
+    if (weatherData.ready) {
+   const apiKey = "65394c1aaf70b9a62t37c04bob3209ea";
+   let city = "Auckland"
+   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric` 
+   axios.get(apiUrl).then(handleResponse);
 return (
     <div className="Weather">
         <form>
@@ -17,21 +40,21 @@ return (
         </div>
         </form>
         
-        <h1>Mangawhai</h1>
+        <h1>{weatherData.city}</h1>
         <ul> 
-            <li>Saturday 1:00PM</li>
-            <li>Rainy</li>
+            <li>{weatherData.date}</li>
+            <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
         <div className="col-6">
-         <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" atl="Rainy"/>   
-         <span className="temp">14</span><span className="units">°C</span>
+         <img src={weatherData.iconUrl} atl={weatherData.description}/>   
+         <span className="temp">{Math.round(weatherData.temperature)}</span><span className="units">°C</span>
         </div>
 <div className="col-6">
     <ul>
-        <li>Precipitation: 33%</li>
-        <li>Humidity: 88%</li>
-        <li>Wind: 13km/h</li>
+        
+        <li>Humidity: {weatherData.humidity}%</li>
+        <li>Wind: {Math.round(weatherData.wind)}km/h</li>
     </ul>
 </div>
         </div>
@@ -39,4 +62,11 @@ return (
         
         </div>
 )
+}else {const apiKey = "65394c1aaf70b9a62t37c04bob3209ea";
+let city = "Auckland"
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric` 
+axios.get(apiUrl).then(handleResponse);
+return "loading..."
+}
+
 }
