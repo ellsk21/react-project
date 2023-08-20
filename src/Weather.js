@@ -23,9 +23,6 @@ export default function Weather(props) {
     }
 
     if (weatherData.ready) {
-   const apiKey = "65394c1aaf70b9a62t37c04bob3209ea";
-   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric` 
-   axios.get(apiUrl).then(handleResponse);
 return (
     <div className="Weather">
         <form>
