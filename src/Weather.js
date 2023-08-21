@@ -17,7 +17,7 @@ export default function Weather(props) {
             description: response.data.condition.description,
             humidity: response.data.temperature.humidity,
             description: response.data.condition.description,
-            iconUrl: "https://ssl.gstatic.com/onebox/weather/64/rain_light.png",
+            iconUrl: "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png",
             date: new Date (response.data.time * 1000)
          });
 
