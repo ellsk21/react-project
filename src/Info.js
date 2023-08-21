@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Icon from "./Icon";
 
 export default function Info(props) {
     return (
@@ -11,7 +12,8 @@ export default function Info(props) {
         </ul>
         <div className="row">
         <div className="col-6">
-         <img src={props.data.iconUrl} atl={props.data.description} />   
+            <Icon code={props.data.icon}
+          atl={props.data.description} />   
          <span className="temp">{Math.round(props.data.temperature)}</span><span className="units">°C</span>
         </div>
 <div className="col-6">
