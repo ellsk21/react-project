@@ -40,6 +40,10 @@
         padding: 0;
         
 }
+.WeatherTemperature
+{
+    margin-top:20px;
+}
 
 .Weather .temp
 {
@@ -47,6 +51,7 @@
     font-size: 45px;
     font-weight: 400;
     line-height: 64px;
+    
 }
 .Weather .units
 {

@@ -5,7 +5,7 @@ console.log(props);
   let url = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.code}.png`;
   return (
    
-      <img id="icon" src={url} alt={props.alt} size={95} />
+      <img className="w-40" src={url} alt={props.alt} size={95} />
       
   );
 }
