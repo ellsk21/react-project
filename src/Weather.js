@@ -15,7 +15,7 @@ export default function Weather(props) {
             temperature: response.data.temperature.current,
             city: response.data.city,
             wind: response.data.wind.speed,
-            
+            coordinates: response.data.coordinates,
             humidity: response.data.temperature.humidity,
             description: response.data.condition.description,
             icon: response.data.condition.icon,
@@ -57,7 +57,7 @@ return (
         </div>
         </form>
         <Info data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates}/>
         
         
         </div>
