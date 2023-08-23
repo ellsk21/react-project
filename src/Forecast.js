@@ -14,23 +14,22 @@ export default function WeatherForecast(props) {
     
     }
 
-    if(loaded){
-        console.log(forecast);
+    if(loaded) {
         return (
         <div className="weatherForecast">
             <div className="row">
-                {forecast.map(function(dailyForecast, index){ 
+                {forecast.map(function (dailyForecast, index) { 
                     if (index < 4 ) { 
                     return (
                         <div className="col" key={index}>
-                    <ForecastDay data={dailyForecast}/>
+                    <ForecastDay data={dailyForecast} />
                 </div>
                     );
-                    }
+                }
                 })}
             </div>
         </div>
-        )
+        );
     } else {
         let apiKey = "65394c1aaf70b9a62t37c04bob3209ea";
         let longitude = props.coordinates.longitude;
