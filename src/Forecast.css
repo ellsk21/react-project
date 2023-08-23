@@ -1,3 +1,6 @@
 .weatherForecast {
     text-align: center;
 }
+.tempMin {
+    margin-left: 5px;;
+}
