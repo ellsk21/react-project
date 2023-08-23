@@ -10,7 +10,7 @@ export default function App() {
      
       <Weather defaultCity="Mangawhai" />
       <footer>
-        This project is by Ellie Korth and is open source coded on <a href="https://github.com/ellsk21/react-project" rel="noopener noreferrer">Github</a></footer>
+        This project is by <a href="https://www.shecodes.io/graduates/83515-ellie-korth" target="_blank" rel="noopener noreferrer"> Ellie Korth</a> and is open source coded on <a href="https://github.com/ellsk21/react-project" target="_blank" rel="noopener noreferrer">Github</a></footer>
         </div>
     </div>
 
